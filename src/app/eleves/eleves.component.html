@@ -1,0 +1,19 @@
+<div>
+    <h3>Liste des eleves</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Nom</td>
+                <td>Supprimer</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let eleve of elevesfiltre">
+                <td>{{eleve.id}}</td>
+                <td>{{ eleve.nom }}</td>
+                <td><button  class="btn btn-danger">Supprimer</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

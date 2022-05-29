@@ -1,0 +1,37 @@
+<h1> Base de données Lycée Limamoulaye </h1>
+
+<div>
+  <h3>Ajout Classe</h3>
+  <form class="col-sm-3">
+    <div class="form-group">
+      <label for="nom">nom</label>
+      <input type="text" [(ngModel)]="classeNom" name="nom" class="form-control">
+    </div>
+    <div class="form-group">
+      <button type="button" (click)="addClasse()" class="btn btn-success">AJOUTER</button>
+    </div>
+  </form>
+
+  <h3>Liste Classe</h3>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Nom</td>
+        <td>Supprimer</td>
+        <td>Etudiants</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let classe of classes">
+        <td>{{classe.id}}</td>
+        <td>{{ classe.nom }}</td>
+        <td><button (click)="deleteClasse(classe.id)" class="btn btn-danger">Supprimer</button></td>
+        <td><a [routerLink]="['classes',classe.id,'eleves']" class="btn btn-success">Voir Etudiants</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
