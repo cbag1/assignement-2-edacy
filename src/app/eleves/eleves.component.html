@@ -1,4 +1,18 @@
 <div>
+    <h3>Ajouter Eleves </h3>
+    <form class="col-sm-3">
+        <div class="form-group">
+            <label for="nom">nom</label>
+            <input type="text" [(ngModel)]="eleveNom" name="nom" class="form-control">
+        </div>
+        <select name="sexe" class="form-control" [(ngModel)]="sexe">
+            <option [value]="'M'">Masculin</option>
+            <option [value]="'F'">Feminin</option>
+          </select>
+        <div class="form-group">
+            <button type="button" (click)="addEleve()" class="btn btn-success">AJOUTER</button>
+        </div>
+    </form>
     <h3>Liste des eleves</h3>
     <table class="table table-striped">
         <thead>
@@ -12,7 +26,7 @@
             <tr *ngFor="let eleve of elevesfiltre">
                 <td>{{eleve.id}}</td>
                 <td>{{ eleve.nom }}</td>
-                <td><button  class="btn btn-danger">Supprimer</button></td>
+                <td><button class="btn btn-danger">Supprimer</button></td>
             </tr>
         </tbody>
     </table>
